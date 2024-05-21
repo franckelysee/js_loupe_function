@@ -1,0 +1,42 @@
+<div class="relative">
+                      <div id="_products-list" class="_products-list relative w-full overflow-hidden py-3">
+                        <!-- Loupe Zone -->
+                        <div id="loupe">
+                          <img id="loupe_img" class="loupe_img" src="" alt="" srcset="" />
+                        </div>
+                        <!-- end Loupe Zone -->
+                        <div class="products_container border relative">
+                          <ul id="listeProduits" class="listeProduits  flex w-[max-content] h-[max-content] transition-all duration-300 ease-in-out">
+                            
+                            {% for image in  model.images %}
+                              <div class="listeProduits_item" image_identity="image_{{ image.image_id}}">
+                                <div class="scroller_list_item my-4 px-1 w-full">
+                                  <div class="_product-item w-full">
+                                    <div class="product_image w-full flex justify-center">
+                                      <div class="flex justify-center">
+                                        <img id="image_louped" class="image_louped" src="{{ image.image_path }}" alt="" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            {% endfor %}
+                          </ul>
+                          <div class="product-images-container"></div>
+
+                          <div class="left_right_btns absolute top-1/2 -translate-y-1/2 z-[99] w-full">
+                            <div class="left absolute left-0 cursor-pointer border w-10 h-10 flex items-center justify-center bg-[#e6e6e6]">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                              </svg>
+                            </div>
+                            <div class="right absolute right-3 cursor-pointer border w-10 h-10 flex items-center justify-center bg-[#e6e6e6]">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
